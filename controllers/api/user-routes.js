@@ -33,6 +33,7 @@ router.post("/login", async (req, res) => {
       return;
     }
 
+    // Checks if the password matches the bcrypted password in User model
     const validPassword = await dbUserData.checkPassword(req.body.password);
 
     if (!validPassword) {
