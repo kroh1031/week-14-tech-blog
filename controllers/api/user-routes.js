@@ -9,6 +9,7 @@ router.post("/", async (req, res) => {
     // Using express-session and connect-session-sequelize middleware
     req.session.save(() => {
       req.session.loggedIn = true;
+      req.session.userId = dbUserData.id;
 
       res.json(dbUserData);
     });
@@ -45,8 +46,10 @@ router.post("/login", async (req, res) => {
 
     req.session.save(() => {
       req.session.loggedIn = true;
-
-      res.status(200).json({ user: dbUserData, message: "You are now logged in!" });
+      req.session.userId = dbUserData.id;
+      res
+        .status(200)
+        .json({ user: dbUserData, message: "You are now logged in!" });
     });
   } catch (err) {
     res.status(500).json(err);
