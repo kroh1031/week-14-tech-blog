@@ -7,7 +7,6 @@ router.get("/", (req, res) => {
 
 // Login route
 router.get("/login", (req, res) => {
-  console.log(req.body);
   if (req.session.loggedIn) {
     res.redirect("/dashboard");
     return;
@@ -17,6 +16,10 @@ router.get("/login", (req, res) => {
 
 // Sign Up route
 router.get("/signup", (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect("/dashboard");
+    return;
+  }
   res.render("signup");
 });
 

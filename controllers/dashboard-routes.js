@@ -1,7 +1,8 @@
 const router = require("express").Router();
 const { Post } = require("../models");
+const withAuth = require ("../utils/auth")
 
-router.get("/", async (req, res) => {
+router.get("/", withAuth, async (req, res) => {
   try {
     const dbPostData = await Post.findAll({
       where: {
@@ -15,6 +16,7 @@ router.get("/", async (req, res) => {
       layout: "dashboard",
     });
   } catch (err) {
+    res.redirect("login")
     res.status(500).json(err);
   }
 });
@@ -23,7 +25,7 @@ router.get("/new", async (req, res) => {
   res.render("create-post", { layout: "dashboard" });
 });
 
-router.get("/edit", async (req, res) => {
+router.get("/edit/:id", async (req, res) => {
   res.render("edit-post", { layout: "dashboard"})
 })
 
