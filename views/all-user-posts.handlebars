@@ -1,9 +1,13 @@
 <h1 class="text-center">MY POSTS</h1>
-<div>
+<div class="container-fluid col-sm-10 ">
 {{#each posts as |post|}}
- <h2 class="text-center">
-     {{post.title}}<br>
-     {{post.body}}
- </h2>
+<div class="card mb-4 bg-light">
+
+ <div class="card-body text-center">
+     <a href="/dashboard/edit" class="h5">{{post.title}}</a>
+    
+ </div>
+
+</div>
 {{/each}}
 </div>

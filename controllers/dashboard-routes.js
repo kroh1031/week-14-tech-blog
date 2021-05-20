@@ -22,4 +22,9 @@ router.get("/", async (req, res) => {
 router.get("/new", async (req, res) => {
   res.render("create-post", { layout: "dashboard" });
 });
+
+router.get("/edit", async (req, res) => {
+  res.render("edit-post", { layout: "dashboard"})
+})
+
 module.exports = router;
