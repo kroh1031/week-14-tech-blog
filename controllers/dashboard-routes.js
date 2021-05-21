@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const { Post } = require("../models");
-const withAuth = require ("../utils/auth")
+const withAuth = require("../utils/auth");
 
 router.get("/", withAuth, async (req, res) => {
   try {
@@ -16,7 +16,7 @@ router.get("/", withAuth, async (req, res) => {
       layout: "dashboard",
     });
   } catch (err) {
-    res.redirect("login")
+    res.redirect("login");
     res.status(500).json(err);
   }
 });
@@ -26,7 +26,17 @@ router.get("/new", async (req, res) => {
 });
 
 router.get("/edit/:id", async (req, res) => {
-  res.render("edit-post", { layout: "dashboard"})
-})
+  try {
+    const dbPostData = await Post.findByPk(req.params.id);
+
+    if (dbPostData) {
+      const post = dbPostData.get({ plain: true });
+
+      res.render("edit-post", { layout: "dashboard", post });
+    }
+  } catch (err) {
+    res.redirect("login");
+  }
+});
 
 module.exports = router;
