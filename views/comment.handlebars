@@ -6,11 +6,23 @@
     <a href="/posts/{{id}}" class="card-title h5">{{title}}</a>
   </div>
 </div>
-<div class="card border-success mb-3 " style="max-width: 100rem;">
+
+
     {{#each comments as |comment|}}
-    <p class="card-text">{{comment.body}}</p>
+    <div class="card border-success mb-3 " style="max-width: 100rem;">
+      <div class="card-body text-success">
+              <form class="mb-4" id="comment-form">
+        <div class="form-group mb-4">
+          <label for="comment" class="h5">Comment</label>
+          <input type="text" class="form-control" placeholder=""
+           id="comment-input-post" />
+        </div>
+
+        <input type="submit" value="Submit" class="btn btn-success w-100 mb-1" />
+      </form>
+    {{!-- <p class="card-text">{{comment.body}}</p>
     <p class="card-text">BY: {{comment.user.username}}</p>
-    <p class="card-text">CREATED AT {{comment.createdAt}}</p>
+    <p class="card-text">CREATED AT {{comment.createdAt}}</p> --}}
+    </div>
+    </div>
     {{/each}}
-</div>
-</div>
