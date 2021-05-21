@@ -1,0 +1,16 @@
+<div class="col-sm-8 container-fluid p-4">
+
+<div class="card border-success mb-3 " style="max-width: 100rem;">
+  <div class="card-header bg-transparent border-success">Posted by {{user.username}} on {{createdAt}}</div>
+  <div class="card-body text-success">
+    <a href="/posts/{{id}}" class="card-title h5">{{title}}</a>
+  </div>
+</div>
+<div class="card border-success mb-3 " style="max-width: 100rem;">
+    {{#each comments as |comment|}}
+    <p class="card-text">{{comment.body}}</p>
+    <p class="card-text">BY: {{comment.user.username}}</p>
+    <p class="card-text">CREATED AT {{comment.createdAt}}</p>
+    {{/each}}
+</div>
+</div>
