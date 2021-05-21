@@ -21,11 +21,11 @@ router.get("/", withAuth, async (req, res) => {
   }
 });
 
-router.get("/new", async (req, res) => {
+router.get("/new", withAuth, async (req, res) => {
   res.render("create-post", { layout: "dashboard" });
 });
 
-router.get("/edit/:id", async (req, res) => {
+router.get("/edit/:id", withAuth, async (req, res) => {
   try {
     const dbPostData = await Post.findByPk(req.params.id);
 
