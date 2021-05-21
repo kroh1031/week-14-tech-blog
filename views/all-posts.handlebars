@@ -1,10 +1,12 @@
 <h1 class="text-center">ALL EXISTING POSTS</h1>
 <div class="col-sm-8 container-fluid p-4">
+{{#each posts as |post|}}
 <div class="card border-success mb-3 " style="max-width: 100rem;">
-  <div class="card-header bg-transparent border-success">Posted by Xandromus on 5/21/2021</div>
+  <div class="card-header bg-transparent border-success">Posted by {{User.username}} on 5/21/2021</div>
   <div class="card-body text-success">
-    <h5 class="card-title">Why MVC is so important</h5>
-    <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis, illum recusandae? Tenetur, modi. Alias, perspiciatis. Explicabo earum laboriosam aut deserunt repellendus mollitia! Asperiores fugit esse ad nostrum neque iusto consectetur quasi veniam itaque eum repellendus doloremque at voluptate perferendis necessitatibus, amet nesciunt est explicabo doloribus vero beatae non maiores cum..</p>
+    <h5 class="card-title">{{post.title}}</h5>
+    <p class="card-text">{{post.body}}</p>
   </div>
 </div>
+{{/each}}
 </div>

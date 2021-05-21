@@ -1,8 +1,18 @@
 const router = require("express").Router();
+const { Post, Comment, User } = require("../models");
 
 // Homepage route
-router.get("/", (req, res) => {
-  res.render("all-posts");
+router.get("/", async (req, res) => {
+  try {
+    const dbPostData = await Post.findAll({
+      include: [User],
+    });
+
+    const posts = dbPostData.map((post) => post.get({ plain: true }));
+
+    res.render("all-posts", { posts });
+  } catch (err) {}
+  res.status(500).json(err);
 });
 
 // Login route
