@@ -7,10 +7,14 @@
   </div>
 </div>
 
-
+{{#if comments}}
     {{#each comments as |comment|}}
-
+  <p class="card-text">{{comment.body}}</p>
+    <p class="card-text">BY: {{comment.user.username}}</p>
+    <p class="card-text">CREATED AT {{comment.createdAt}}</p>
      {{/each}}
+{{/if}}
+
     <div class="card border-success mb-3 " style="max-width: 100rem;">
       <div class="card-body text-success">
         <form class="mb-4" id="comment-form">
@@ -23,10 +27,8 @@
 
         <input type="submit" value="Submit" class="btn btn-success w-100 mb-1" />
       </form>
-    {{!-- <p class="card-text">{{comment.body}}</p>
-    <p class="card-text">BY: {{comment.user.username}}</p>
-    <p class="card-text">CREATED AT {{comment.createdAt}}</p> --}}
+  
     </div>
-    </div>
+</div>
    
 <script src="/js/comment.js"></script>
