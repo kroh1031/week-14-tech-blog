@@ -9,10 +9,13 @@
 
 
     {{#each comments as |comment|}}
+
+     {{/each}}
     <div class="card border-success mb-3 " style="max-width: 100rem;">
       <div class="card-body text-success">
-              <form class="mb-4" id="comment-form">
+        <form class="mb-4" id="comment-form">
         <div class="form-group mb-4">
+             <input type="hidden" id="post-id" value="{{id}}">
           <label for="comment" class="h5">Comment</label>
           <input type="text" class="form-control" placeholder=""
            id="comment-input-post" />
@@ -25,4 +28,5 @@
     <p class="card-text">CREATED AT {{comment.createdAt}}</p> --}}
     </div>
     </div>
-    {{/each}}
+   
+<script src="/js/comment.js"></script>

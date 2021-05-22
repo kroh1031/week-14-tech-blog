@@ -22,9 +22,7 @@ router.get("/posts/:id", async (req, res) => {
     const dbPostData = await Post.findByPk(req.params.id, {
       include: [{ model: User }, { model: Comment, include: [User] }],
     });
-    console.log(dbPostData);
     const posts = dbPostData.get({ plain: true });
-    console.log(posts);
     res.render("comment", { ...posts, loggedIn: req.session.loggedIn });
   } catch (err) {
     res.status(500).json(err);
