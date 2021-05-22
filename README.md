@@ -6,7 +6,7 @@
 
 [_Deployed Tech Blog Application!_](https://tech-blog-app14.herokuapp.com/)
 
-This application is a CMS-style blog site where developers can publish their blog posts and comment on other developers’ posts as well.
+This is a CMS-style blog site where developers can publish their blog posts and comment on other developers’ posts as well.  
 It follows the MVC paradigm in its architectural structure, using Handlebars.js as the templating language, Sequelize as the ORM, and the express-session npm package for authentication.
 
 ## Table of Contents
