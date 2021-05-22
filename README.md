@@ -47,22 +47,21 @@ https://opensource.org/licenses/MIT
 The following images show the web application's appearance and functionality:
 
 **Sign up page:**
-![User sign up page](./assets/signup.PNG)
+![User sign up page](./assets/signup.png)
 
 **Creating a new post in dashboard:**
-![Creating post in dashboard](./assets/create-post.PNG)
+![Creating post in dashboard](./assets/create-post.png)
 
 **User's posts:**
-![All user posts](./assets/user-posts.PNG)
+![All user posts](./assets/user-posts.png)
 
 **Edit/Delete an existing post:**
-![Editing post in dashboard](./assets/edit-post.PNG)
+![Editing post in dashboard](./assets/edit-post.png)
 
 **All existing posts:**
-![All existing posts in homepage](./assets/all-posts.PNG)
+![All existing posts in homepage](./assets/all-posts.png)
 
 ## Questions
 
 If you have any questions about the repo, open an issue or contact me directly at karenroh@hotmail.com.  
  You can find more of my work at [kroh1031](https://github.com/kroh1031).
-
