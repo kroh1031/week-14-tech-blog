@@ -24,6 +24,7 @@ router.get("/posts/:id", async (req, res) => {
       include: [{ model: User }, { model: Comment, include: [User] }],
     });
     const posts = dbPostData.get({ plain: true });
+    console.log(posts)
     res.render("comment", { ...posts, loggedIn: req.session.loggedIn });
   } catch (err) {
     res.status(500).json(err);

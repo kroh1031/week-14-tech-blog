@@ -7,10 +7,17 @@ router.post("/", withAuth, async (req, res) => {
     const newComment = await Comment.create(req.body, {
       userId: req.session.userId,
     });
-    res.json(newComment);
+    res.json(newComment.body);
   } catch (err) {
     res.status(500).json(err);
   }
+});
+
+router.get("/", withAuth, async (req, res) => {
+  try {
+    const allComments = await Comment.findAll({});
+    res.json(allComments);
+  } catch (err) {}
 });
 
 module.exports = router;
